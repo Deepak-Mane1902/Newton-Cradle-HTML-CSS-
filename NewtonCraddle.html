@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <link rel="stylesheet" href="style.css"> -->
+<style>
+    body {
+        height: 100%;
+        display: grid;
+        place-items: center;
+        background-color: black;
+    }
+    .container {
+        width: 500px;
+        height: 1rem;
+        background-color: rgb(127, 3, 242);
+        /* border: 1px solid #ddd; */
+        box-shadow: 0 0 10px rgb(127, 3, 242);
+        display:flex ;
+        justify-content: center;
+        gap: 4.7rem;
+    }
+    div{
+        width: .5rem;
+        height: 15rem;
+        background-color: rgb(127, 3, 242);
+        box-shadow: 0 0 10px rgb(127, 3, 242);
+        position:relative;
+        
+    }
+    .container div::before{
+        content:" ";
+        position: absolute;
+        /* bottom: 0; */
+        top: 90%;
+        left: -2.2rem;
+        width: 5rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        background-color: rgb(115, 0, 255);
+        box-shadow: 0 0 10px rgb(127, 3, 242);
+        border: 2px solid rgb(100, 0, 187);
+        /* opacity: 75%; */
+    }
+    .container div:first-child{
+        animation: left 2s linear infinite;
+        transform-origin: top left;
+    }   
+    @keyframes left{
+        0%{
+            rotate: 0deg;
+            }
+        25%{rotate: 30deg;}
+        50%{rotate: 0deg;}
+        100%{
+            rotate: 0deg;
+        }
+    }
+    .container div:last-child{
+        animation: right 2s linear 1s infinite;
+        transform-origin: top right;
+    }   
+    @keyframes right{
+        0%{rotate: 0deg;}
+        25%{rotate: -30deg;}
+        50%{rotate: 0deg;}
+        100%{rotate: 0deg;}
+    }
+</style>
+</head>
+<body>
+<div class="container">
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+ <div></div>
+</div>
+</body>
+</html>
